@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+#wrapper{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+}
+h1{
+    color: white;
+    font-family:'Courier New', Courier, monospace
+}
+h2{
+    color: white;
+    font-family:'Courier New', Courier, monospace
+}
+p{
+    color: white;
+    font-family:'Courier New', Courier, monospace
+}
+li{
+    color: white;
+    font-family:'Courier New', Courier, monospace
+}
