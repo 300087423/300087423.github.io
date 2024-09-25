@@ -1,5 +1,5 @@
 const hours = new Date().getHours() // get the current hour
-
+const key = "It's a secret to everybody."
 const isMorning = hours >= 4 && hours < 12 // is it morning?
 const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
 const isEvening = hours >= 17 || hours < 4 // is it evening?
@@ -17,4 +17,5 @@ else if(isEvening == true){
 else{
     p.textContent = "something went wrong"
 }
-//im going to be honest, I dont know how I got this to work.
+
+localStorage.setItem(key, "buy something will ya?")
