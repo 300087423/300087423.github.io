@@ -5,6 +5,8 @@ const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
 const isEvening = hours >= 17 || hours < 4 // is it evening?
 const welcome = document.querySelector("#welcome");
 const p = document.querySelector("p");
+const todor = document.querySelector("#buttonToDo");
+const todo = document.querySelector("#todoList")
 
 const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#prev");
@@ -65,3 +67,33 @@ prevButton.addEventListener("click", () => {
     }
     showImages();
 })
+
+
+todoList[
+    { "text": "Buy milk", "completed": false },
+    { "text": "Walk the dog", "completed": false },
+    { "text": "Do homework", "completed": false }
+]
+
+
+// Get the list from local storage
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+
+// Add a new item to the list
+todor.addEventListener("click", () => {
+todos.push({ text: newtodo.value, completed: false })
+
+// Save the list to local storage
+
+localStorage.setItem('todo-list', JSON.stringify(todos))
+})
+// Clear the li's before we recreate them
+todoList.innerHTML = ''
+
+// Create and add new list items to the DOM
+const renderTodos = (todo) => {
+const li = document.createElement('li')
+li.textContent = todo.text
+todoList.append(li)
+}
+renderTodos(todos);
