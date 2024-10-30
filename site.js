@@ -10,6 +10,8 @@ const todo = document.querySelector("#todoList")
 
 const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#prev");
+
+
 if(isMorning == true){
     p.TextContent = "good morning"
 }
@@ -96,4 +98,31 @@ const li = document.createElement('li')
 li.textContent = todo.text
 todoList.append(li)
 }
+const TheRandomNumber = Math.floor(Math.random() * 1024) + 1
+const getRandomPokemon = async () => {
+ 
+    const url = await fetch('https://pokeapi.co/api/v2/pokemon/' + TheRandomNumber)
+    const pokemon = await url.json()
+    return pokemon
+   // return url, TheRandomNumber;
+   //should be using fetch here, should be getting the pokemon data here, then passing the pokemin data into render pokemon
+
+}
+//console.log(getRandomPokemon());
+
+const renderPokemon = pokemon => {
+    const img = document.createElement('img')
+    const theID = pokemon
+    console.log(theID);
+    
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${TheRandomNumber}.png` // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + TheRandomNumber + ".png" /// url of the image from the 'front_default' property
+    img.alt = pokemon.name //"https://pokeapi.co/api/v2/pokemon/" + TheRandomNumber // name of the pokemon
+    console.log(img.src)
+    const parentElement = document.querySelector("#pokemon")
+    parentElement.append(img)
+    return parentElement;
+}
+renderPokemon(getRandomPokemon())
+ 
+
 renderTodos(todos);
